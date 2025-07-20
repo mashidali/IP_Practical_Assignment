@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even/Odd Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        input[type="number"] {
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin: 10px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .even {
+            background-color: #d5f4e6;
+            color: #27ae60;
+        }
+        
+        .odd {
+            background-color: #fadbd8;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Even/Odd Number Checker</h1>
+        
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <br>
+        <button onclick="checkEvenOdd()">Check Even/Odd</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkEvenOdd() {
+            // Get the input value
+            var number = document.getElementById('numberInput').value;
+            var resultDiv = document.getElementById('result');
+            
+            // Check if input is empty
+            if (number === '') {
+                resultDiv.innerHTML = 'Please enter a number';
+                resultDiv.className = '';
+                return;
+            }
+            
+            // Convert to integer
+            number = parseInt(number);
+            
+            // Check if even or odd
+            if (number % 2 === 0) {
+                resultDiv.innerHTML = number + ' is EVEN';
+                resultDiv.className = 'even';
+            } else {
+                resultDiv.innerHTML = number + ' is ODD';
+                resultDiv.className = 'odd';
+            }
+        }
+        
+        // Allow Enter key to check number
+        document.getElementById('numberInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkEvenOdd();
+            }
+        });
+    </script>
+</body>
+</html>

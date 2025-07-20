@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .university-image {
+            display: block;
+            margin: 20px auto;
+            width: 400px;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        .link-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Information</h1>
+    
+    <!-- University Image -->
+    <img src="NSU_Logo.png" 
+         alt="University Campus" 
+         class="university-image">
+    
+    <h2>Student Marks Record</h2>
+    
+    <!-- Student Marks Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mashid</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>Sane</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>Imran</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>Shakir</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Misbah</td>
+                <td>65</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Educational Link -->
+    <div class="link-section">
+        <p>For more educational resources, visit:</p>
+        <a href="https://www.khanacademy.org" target="_blank">Khan Academy</a>
+    </div>
+</body>
+</html>

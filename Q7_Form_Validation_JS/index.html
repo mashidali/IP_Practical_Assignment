@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration with Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+        }
+        
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #34495e;
+        }
+        
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .success {
+            color: green;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Registration</h1>
+    
+    <form id="registrationForm">
+        <div id="errorMessages"></div>
+        
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="rollnumber">Roll Number:</label><br>
+        <input type="text" id="rollnumber" name="rollnumber"><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="course">Course:</label><br>
+        <select id="course" name="course">
+         <option value="">Select a course</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="electrical-engineering">Electrical Engineering</option>
+            <option value="mechanical-engineering">Mechanical Engineering</option>
+            <option value="civil-engineering">Civil Engineering</option>
+            <option value="information-technology">Information Technology</option>
+            <option value="business-administration">Business Administration</option>
+            <option value="commerce">Commerce</option>
+            <option value="arts">Arts</option>
+            <option value="science">Science</option>
+            <option value="law">Law</option>
+            <option value="pharmacy">Pharmacy</option>
+            <option value="nursing">Nursing</option>
+            <option value="hotel-management">Hotel Management</option>
+            <option value="media-studies">Media Studies</option>
+            <option value="education">Education</option>
+        </select><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <input type="submit" value="Submit">
+        
+        <div id="successMessage"></div>
+    </form>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop form from submitting normally
+            
+            // Clear previous messages
+            document.getElementById('errorMessages').innerHTML = '';
+            document.getElementById('successMessage').innerHTML = '';
+            
+            // Get form values
+            var name = document.getElementById('name').value.trim();
+            var rollNumber = document.getElementById('rollnumber').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var course = document.getElementById('course').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            
+            var errors = [];
+            
+            // Check if fields are empty
+            if (name === '') {
+                errors.push('Name is required');
+            }
+            
+            if (rollNumber === '') {
+                errors.push('Roll Number is required');
+            }
+            
+            if (!gender) {
+                errors.push('Please select gender');
+            }
+            
+            if (course === '') {
+                errors.push('Please select a course');
+            }
+            
+            if (email === '') {
+                errors.push('Email is required');
+            } else {
+                // Simple email validation
+                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(email)) {
+                    errors.push('Please enter a valid email address');
+                }
+            }
+            
+            // Display errors or success
+            if (errors.length > 0) {
+                var errorHtml = '<div class="error">';
+                for (var i = 0; i < errors.length; i++) {
+                    errorHtml += '• ' + errors[i] + '<br>';
+                }
+                errorHtml += '</div>';
+                document.getElementById('errorMessages').innerHTML = errorHtml;
+            } else {
+                document.getElementById('successMessage').innerHTML = 
+                    '<div class="success">Registration successful! All fields are valid.</div>';
+            }
+        });
+    </script>
+</body>
+</html>

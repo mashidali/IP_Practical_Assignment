@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Two Column Layout - Student Life</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .left, .right {
+      flex: 1;
+      padding: 25px;
+      background-color: white;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: #2980b9;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      background-color: #ecf0f1;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-left: 4px solid #3498db;
+      border-radius: 5px;
+    }
+
+    li:hover {
+      background-color: #d5dbdb;
+    }
+
+    p {
+      color: #34495e;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .highlight {
+      background-color: #e8f6f3;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 15px;
+      border: 1px solid #1abc9c;
+    }
+
+    /* Simple responsive */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Netaji Subhas University</h1>
+
+  <div class="container">
+    <div class="left">
+      <h3>Student Activities</h3>
+      <ul>
+        <li>Sports</li>
+        <li>Coding Club</li>
+        <li>Cultural Events</li>
+        <li>Music Club</li>
+        <li>Debate Society</li>
+      </ul>
+    </div>
+
+    <div class="right">
+      <h3>Campus Life</h3>
+      <p>Life at Netaji Subhas University is vibrant with many events, modern infrastructure, and holistic student development. Students enjoy a supportive environment for learning and growth.</p>
+      
+      <div class="highlight">
+        <strong>Campus Features:</strong> Modern classrooms, library, sports facilities, and student centers provide everything needed for a great college experience.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

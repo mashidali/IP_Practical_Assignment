@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Navigation Bar</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #74b9ff, #0984e3);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: #333;
+            text-align: center;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        .navbar a:hover {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a.active {
+            background: linear-gradient(45deg, #e17055, #fdcb6e);
+            color: white;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 2.5em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.5em;
+            font-family: 'Times New Roman', Times, serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#gallery">Gallery</a>
+    </div>
+
+    <div class="content">
+        <h1>Welcome!</h1>
+        <p>This is a Navigation Bar designed using basic CSS techniques.</p>
+    </div>
+</body>
+</html>

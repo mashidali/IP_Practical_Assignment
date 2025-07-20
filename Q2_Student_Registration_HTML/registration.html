@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        form {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+  <h1>Student Registration</h1>
+  <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="rollnumber">Roll Number:</label><br>
+        <input type="text" id="rollnumber" name="rollnumber" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        <label for="course">Course:</label><br>
+        <select id="course" name="course" required>
+            <option value="">Select a course</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="electrical-engineering">Electrical Engineering</option>
+            <option value="mechanical-engineering">Mechanical Engineering</option>
+            <option value="civil-engineering">Civil Engineering</option>
+            <option value="information-technology">Information Technology</option>
+            <option value="business-administration">Business Administration</option>
+            <option value="commerce">Commerce</option>
+            <option value="arts">Arts</option>
+            <option value="science">Science</option>
+            <option value="law">Law</option>
+            <option value="pharmacy">Pharmacy</option>
+            <option value="nursing">Nursing</option>
+            <option value="hotel-management">Hotel Management</option>
+            <option value="media-studies">Media Studies</option>
+            <option value="education">Education</option>
+        </select><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
